@@ -1,10 +1,7 @@
-﻿Argler is a simple module that parses a whole command line string into individual arguments
-that can be passed to modules (such as [minimist](https://www.npmjs.com/package/minimist)) that expect `process.argv`-like argument array on input.
+﻿var argler = require('./index');
+var minimist = require('minimist');
 
-## Examples
 
-```javascript
-var argler = require('argler');
 
 // 'one two three' -> [ 'one', 'two', 'three' ]
 var args = argler('one two three');
@@ -17,13 +14,8 @@ console.dir(args);
 // 'say Hello\\ world!' -> [ 'say', 'Hello world!' ]
 var args = argler('say Hello\\ world!');
 console.dir(args);
-```
 
-## Examples with minimist
 
-```javascript
-var argler = require('argler');
-var minimist = require('minimist');
 
 // with minimist, you can do this:
 var args = minimist(argler('get --retries 3 "document 1.txt"'));
@@ -42,10 +34,3 @@ delete options._;
 console.log(cmd);
 console.dir(args);
 console.dir(options);
-```
-
-## Installing
-
-```shell
-$ npm install argler
-```
