@@ -9,11 +9,14 @@
     }
 }
 
-function parse(line) {
+function parse(line, options) {
     var len = line.length;
     var args = [];
     var current = null;
     var quote = null;
+    
+    options = options || {};
+    var ignoreBackslash = !!options.ignoreBackslash;
 
     for (var n = 0; n < len; n++) {
         var c = line[n];
@@ -28,6 +31,7 @@ function parse(line) {
         } else {
             switch (c) {
                 case '\\':
+                    if (ignoreBackslash) break;
                     if (++n >= len) continue;
                     c = line[n];
                     break;

@@ -1,6 +1,6 @@
 {
   "name": "argler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parses a raw command line into arguments",
   "main": "./index.js",
   "engines": {
