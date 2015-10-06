@@ -1,4 +1,7 @@
-﻿Argler is a simple module that parses a whole command line string into individual arguments
+﻿argler
+======
+
+Argler is a simple module that parses a whole command line string into individual arguments
 that can be passed to modules (such as [minimist](https://www.npmjs.com/package/minimist)) that expect `process.argv`-like argument array on input.
 
 ## Examples
